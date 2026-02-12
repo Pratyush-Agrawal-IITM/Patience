@@ -1,44 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Patience Puzzle</title>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      text-align: center;
-    }
+    <title>Valentine Week ❤️</title>
 
-    #downloadButton {
-      display: none; /* hidden initially */
-      margin-top: 20px;
-      padding: 12px 24px;
-      font-size: 18px;
-      cursor: pointer;
-    }
-  </style>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            background: #0e0e15;
+            color: white;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        /* ---------- BACKGROUND ---------- */
+
+        .background {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            animation: float 20s infinite alternate ease-in-out;
+        }
+
+        .g1 { background: radial-gradient(circle, rgba(255,80,120,0.5), transparent 70%); width:500px; height:500px; top:5%; left:10%; }
+        .g2 { background: radial-gradient(circle, rgba(255,140,100,0.4), transparent 70%); width:500px; height:500px; bottom:5%; right:10%; animation-delay:4s; }
+        .g3 { background: radial-gradient(circle, rgba(170,100,255,0.4), transparent 70%); width:500px; height:500px; top:40%; right:30%; animation-delay:8s; }
+        .g4 { background: radial-gradient(circle, rgba(255,50,150,0.3), transparent 70%); width:500px; height:500px; bottom:20%; left:20%; animation-delay:2s; }
+        .g5 { background: radial-gradient(circle, rgba(100,200,255,0.3), transparent 70%); width:500px; height:500px; top:60%; left:50%; animation-delay:6s; }
+        .g6 { background: radial-gradient(circle, rgba(255,200,120,0.3), transparent 70%); width:500px; height:500px; top:20%; left:70%; animation-delay:3s; }
+
+        .g7 { background: radial-gradient(circle, rgba(255,120,180,0.25), transparent 70%); width:300px; height:300px; top:75%; left:60%; animation-delay:5s; }
+        .g8 { background: radial-gradient(circle, rgba(120,180,255,0.25), transparent 70%); width:350px; height:350px; top:15%; left:50%; animation-delay:9s; }
+        .g9 { background: radial-gradient(circle, rgba(255,200,150,0.2), transparent 70%); width:280px; height:280px; bottom:15%; right:40%; animation-delay:7s; }
+        .g10 { background: radial-gradient(circle, rgba(200,100,255,0.2), transparent 70%); width:260px; height:260px; top:30%; left:5%; animation-delay:11s; }
+        .g11 { background: radial-gradient(circle, rgba(255,80,120,0.18), transparent 70%); width:320px; height:320px; bottom:5%; left:35%; animation-delay:13s; }
+        .g12 { background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%); width:240px; height:240px; top:50%; right:5%; animation-delay:6s; }
+
+        @keyframes float {
+            from { transform: translateY(-60px) translateX(-30px); }
+            to { transform: translateY(60px) translateX(30px); }
+        }
+
+        /* ---------- CONTENT ---------- */
+
+        .content {
+            position: relative;
+            z-index: 2;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hidden { display: none; }
+
+        .day-title {
+            font-size: 64px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 22px;
+            color: #ccc;
+            margin-top: 15px;
+        }
+
+        .heart {
+            font-size: 95px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 30px;
+        }
+
+        .heart:hover {
+            transform: scale(1.2);
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 14px 36px;
+            font-size: 18px;
+            border: 1px solid #ff4d6d;
+            border-radius: 30px;
+            cursor: pointer;
+            background: transparent;
+            color: #ff4d6d;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff4d6d;
+            color: white;
+        }
+
+        .gift-img {
+    	    width: 90%;
+            max-width: 420px;
+            max-height: 60vh;
+   	    height: auto;
+ 	    object-fit: contain;   /* IMPORTANT CHANGE */
+ 	    border-radius: 20px;
+ 	    margin-top: 25px;
+ 	    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+	}
+
+        .message {
+            font-size: 24px;
+            max-width: 750px;
+            margin: 30px auto;
+            color: #eee;
+        }
+
+    </style>
 </head>
+
 <body>
 
-  <h1>Some things take patience.</h1>
+<div class="background">
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
+    <div class="glow g3"></div>
+    <div class="glow g4"></div>
+    <div class="glow g5"></div>
+    <div class="glow g6"></div>
+    <div class="glow g7"></div>
+    <div class="glow g8"></div>
+    <div class="glow g9"></div>
+    <div class="glow g10"></div>
+    <div class="glow g11"></div>
+    <div class="glow g12"></div>
+</div>
 
-  <!-- Download button hidden initially -->
-  <a id="downloadButton" href="آسان.pdf" download="آسان.pdf">
-    Download the PDF
-  </a>
+<div class="content">
 
-  <script>
-    // Wait 30 seconds before showing the download button
-    setTimeout(function() {
-      document.getElementById('downloadButton').style.display = 'inline-block';
-    }, 30000); // 30000 milliseconds = 30 seconds
-  </script>
+<div id="startScreen">
+    <h1 class="day-title">Valentine Week</h1>
+    <button onclick="startGame()">Begin</button>
+</div>
+
+<div id="dayScreen" class="hidden">
+    <h1 id="dayTitle" class="day-title"></h1>
+    <p class="subtitle">Tap the heart to unlock</p>
+    <div class="heart" onclick="showClue()">❤️</div>
+    <div id="clueText" class="message"></div>
+    <button id="revealBtn" class="hidden" onclick="revealGift()">Reveal</button>
+</div>
+
+<div id="revealScreen" class="hidden">
+    <h1 id="revealTitle" style="font-size:40px; font-weight:400;"></h1>
+    <p id="revealText" class="message"></p>
+    <img id="giftImage" class="gift-img">
+    <br>
+    <button onclick="nextDay()">Next Day →</button>
+</div>
+
+</div>
+
+<script>
+
+let currentDay = 0;
+
+const days = [
+    { title:"Rose Day 🌹", clue:"Something beautiful, just like you.", text:"Pura garden ugaa ke deta agar yaha hoti to 🌹", img:"Rose.png" },
+    { title:"Propose Day 💍", clue:"If I could ask you something today…", text:"Mere Baccho ki Mammi banegi? 💖", img:"promise.png" },
+    { title:"Chocolate Day 🍫", clue:"Life is sweeter with you.", text:"Unfortunately, Tikki day is not an option 😋", img:"choco.png" },
+    { title:"Teddy Day 🧸", clue:"Something soft to hug when I can't.", text:"Jab tak mai na aau, tab tak teddy se kaam chalaale 🧸", img:"teddy.png" },
+    { title:"Promise Day 🤝", clue:"Some words matter forever.", text:"I promise to try to not irritate you as much ❤️", img:"propose.png" },
+    { title:"Hug Day 🤗", clue:"Close your eyes for a second.", text:"Jaadu ki Jhappiiiiiiiiiiiii 🤗", img:"hug.png" },
+    { title:"Kiss Day 💋", clue:"Some distances can’t stop feelings.", text:"Ye lo Paari 💋 (btw its actually mine)", img:"https://images.unsplash.com/photo-1511988617509-a57c8a288659" },
+    { title:"Valentine’s Day ❤️", clue:"The final one.", text:"I choose you. Today. And always. ❤️", img:"https://images.unsplash.com/photo-1518199266791-5375a83190b7" }
+];
+
+function startGame(){
+    document.getElementById("startScreen").classList.add("hidden");
+    document.getElementById("dayScreen").classList.remove("hidden");
+    loadDay();
+}
+
+function loadDay(){
+    document.getElementById("dayTitle").innerText = days[currentDay].title;
+    document.getElementById("clueText").innerText = "";
+    document.getElementById("revealBtn").classList.add("hidden");
+}
+
+function showClue(){
+    document.getElementById("clueText").innerText = days[currentDay].clue;
+    document.getElementById("revealBtn").classList.remove("hidden");
+}
+
+function revealGift(){
+    document.getElementById("dayScreen").classList.add("hidden");
+    document.getElementById("revealScreen").classList.remove("hidden");
+
+    document.getElementById("revealTitle").innerText = days[currentDay].title;
+    document.getElementById("revealText").innerText = days[currentDay].text;
+    document.getElementById("giftImage").src = days[currentDay].img;
+}
+
+function nextDay(){
+    currentDay++;
+    if(currentDay >= days.length){
+        alert("You completed Valentine Week ❤️");
+        location.reload();
+        return;
+    }
+    document.getElementById("revealScreen").classList.add("hidden");
+    document.getElementById("dayScreen").classList.remove("hidden");
+    loadDay();
+}
+
+</script>
 
 </body>
 </html>
